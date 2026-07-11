@@ -1,0 +1,1447 @@
+$date
+	Tue Dec 16 23:09:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb_main_v $end
+$var wire 1 ! visual_warning $end
+$var wire 2 " system_state [1:0] $end
+$var wire 1 # deploy_rear_right $end
+$var wire 1 $ deploy_rear_left $end
+$var wire 1 % deploy_passenger $end
+$var wire 1 & deploy_front_right $end
+$var wire 1 ' deploy_front_left $end
+$var wire 1 ( deploy_driver $end
+$var wire 1 ) deploy_back_right $end
+$var wire 1 * deploy_back_left $end
+$var wire 8 + ctrl_steer_assist [7:0] $end
+$var wire 8 , ctrl_brake_force [7:0] $end
+$var reg 16 - accel_x_in [15:0] $end
+$var reg 16 . accel_y_in [15:0] $end
+$var reg 1 / clk $end
+$var reg 8 0 current_velocity_reg [7:0] $end
+$var reg 16 1 distance_to_obstacle [15:0] $end
+$var reg 8 2 dr_s1 [7:0] $end
+$var reg 8 3 dr_s2 [7:0] $end
+$var reg 8 4 dr_s3 [7:0] $end
+$var reg 8 5 dr_s4 [7:0] $end
+$var reg 8 6 driver_brake_pedal [7:0] $end
+$var reg 8 7 driver_steering_torque [7:0] $end
+$var reg 1 8 obstacle_in $end
+$var reg 8 9 ps_s1 [7:0] $end
+$var reg 8 : ps_s2 [7:0] $end
+$var reg 8 ; ps_s3 [7:0] $end
+$var reg 8 < ps_s4 [7:0] $end
+$var reg 8 = rl_s1 [7:0] $end
+$var reg 8 > rl_s2 [7:0] $end
+$var reg 8 ? rl_s3 [7:0] $end
+$var reg 8 @ rl_s4 [7:0] $end
+$var reg 8 A rr_s1 [7:0] $end
+$var reg 8 B rr_s2 [7:0] $end
+$var reg 8 C rr_s3 [7:0] $end
+$var reg 8 D rr_s4 [7:0] $end
+$var reg 1 E rst_n $end
+$var reg 16 F total_decel_step [15:0] $end
+$scope module DUT $end
+$var wire 16 G accel_x_in [15:0] $end
+$var wire 16 H accel_y_in [15:0] $end
+$var wire 1 / clk $end
+$var wire 8 I current_velocity [7:0] $end
+$var wire 16 J distance_to_obstacle [15:0] $end
+$var wire 8 K dr_s1 [7:0] $end
+$var wire 8 L dr_s2 [7:0] $end
+$var wire 8 M dr_s3 [7:0] $end
+$var wire 8 N dr_s4 [7:0] $end
+$var wire 8 O driver_brake_pedal [7:0] $end
+$var wire 8 P driver_steering_torque [7:0] $end
+$var wire 1 8 obstacle_in $end
+$var wire 8 Q ps_s1 [7:0] $end
+$var wire 8 R ps_s2 [7:0] $end
+$var wire 8 S ps_s3 [7:0] $end
+$var wire 8 T ps_s4 [7:0] $end
+$var wire 8 U rl_s1 [7:0] $end
+$var wire 8 V rl_s2 [7:0] $end
+$var wire 8 W rl_s3 [7:0] $end
+$var wire 8 X rl_s4 [7:0] $end
+$var wire 8 Y rr_s1 [7:0] $end
+$var wire 8 Z rr_s2 [7:0] $end
+$var wire 8 [ rr_s3 [7:0] $end
+$var wire 8 \ rr_s4 [7:0] $end
+$var wire 1 E rst_n $end
+$var wire 8 ] w_rr [7:0] $end
+$var wire 8 ^ w_rl [7:0] $end
+$var wire 8 _ w_ps [7:0] $end
+$var wire 8 ` w_dr [7:0] $end
+$var wire 1 ! visual_warning $end
+$var wire 2 a system_state [1:0] $end
+$var wire 1 # deploy_rear_right $end
+$var wire 1 $ deploy_rear_left $end
+$var wire 1 % deploy_passenger $end
+$var wire 1 & deploy_front_right $end
+$var wire 1 ' deploy_front_left $end
+$var wire 1 ( deploy_driver $end
+$var wire 1 ) deploy_back_right $end
+$var wire 1 * deploy_back_left $end
+$var wire 8 b ctrl_steer_assist [7:0] $end
+$var wire 8 c ctrl_brake_force [7:0] $end
+$var wire 2 d class_rear_right [1:0] $end
+$var wire 2 e class_rear_left [1:0] $end
+$var wire 2 f class_pass [1:0] $end
+$var wire 2 g class_driver [1:0] $end
+$scope module ACU_MAIN_UNIT $end
+$var wire 1 / clk $end
+$var wire 2 h fsm_state [1:0] $end
+$var wire 16 i raw_accel_x [15:0] $end
+$var wire 16 j raw_accel_y [15:0] $end
+$var wire 1 8 raw_obstacle_det $end
+$var wire 1 E rst_n $end
+$var wire 2 k pass_front [1:0] $end
+$var wire 2 l pass_back_right [1:0] $end
+$var wire 2 m pass_back_left [1:0] $end
+$var wire 2 n driver [1:0] $end
+$var wire 1 o clean_obstacle $end
+$var wire 16 p clean_accel_y [15:0] $end
+$var wire 16 q clean_accel_x [15:0] $end
+$var reg 2 r current_state [1:0] $end
+$var reg 1 * deploy_back_left $end
+$var reg 1 ) deploy_back_right $end
+$var reg 1 ( deploy_driver $end
+$var reg 1 ' deploy_front_left $end
+$var reg 1 & deploy_front_right $end
+$var reg 1 % deploy_passenger $end
+$var reg 1 $ deploy_rear_left $end
+$var reg 1 # deploy_rear_right $end
+$var reg 2 s next_state [1:0] $end
+$scope module sync_acc_x $end
+$var wire 16 t async_in [15:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 16 u stage1 [15:0] $end
+$var reg 16 v sync_out [15:0] $end
+$upscope $end
+$scope module sync_acc_y $end
+$var wire 16 w async_in [15:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 16 x stage1 [15:0] $end
+$var reg 16 y sync_out [15:0] $end
+$upscope $end
+$scope module sync_radar $end
+$var wire 1 8 async_in $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 1 z stage1 $end
+$var reg 1 o sync_out $end
+$upscope $end
+$upscope $end
+$scope module ASU_BRAKE_STEER $end
+$var wire 8 { async_driver_brake_pedal [7:0] $end
+$var wire 8 | async_driver_steering_torque [7:0] $end
+$var wire 1 / clk $end
+$var wire 8 } current_velocity [7:0] $end
+$var wire 16 ~ distance_to_obstacle [15:0] $end
+$var wire 1 8 is_obstacle_valid $end
+$var wire 1 E rst_n $end
+$var wire 8 !" raw_steer_sync [7:0] $end
+$var wire 8 "" clean_steer_torque [7:0] $end
+$var wire 8 #" clean_brake_pedal [7:0] $end
+$var reg 8 $" abs_steer_torque [7:0] $end
+$var reg 8 %" calculated_physics_brake [7:0] $end
+$var reg 1 &" enable_evasive_assist $end
+$var reg 8 '" final_brake_command [7:0] $end
+$var reg 16 (" raw_assist_cal [15:0] $end
+$var reg 32 )" required_brake_energy [31:0] $end
+$var reg 8 *" steer_assist_command [7:0] $end
+$var reg 8 +" tentative_brake [7:0] $end
+$var reg 8 ," traction_limit_brake [7:0] $end
+$var reg 32 -" velocity_squared [31:0] $end
+$var reg 1 ! warning_visual_active $end
+$scope module u_sync_brake $end
+$var wire 8 ." async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 /" stage1 [7:0] $end
+$var reg 8 0" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_steer $end
+$var wire 8 1" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 2" stage1 [7:0] $end
+$var reg 8 3" sync_out [7:0] $end
+$upscope $end
+$upscope $end
+$scope module OCM_DRIVER $end
+$var wire 8 4" SensorBackLeft_raw [7:0] $end
+$var wire 8 5" SensorBackRight_raw [7:0] $end
+$var wire 8 6" SensorFrontLeft_raw [7:0] $end
+$var wire 8 7" SensorFrontRight_raw [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var wire 8 8" FR_sync [7:0] $end
+$var wire 8 9" FL_sync [7:0] $end
+$var wire 8 :" BR_sync [7:0] $end
+$var wire 8 ;" BL_sync [7:0] $end
+$var reg 2 <" classify [1:0] $end
+$var reg 10 =" current_total [9:0] $end
+$var reg 8 >" weight_kg [7:0] $end
+$scope module u_sync_1 $end
+$var wire 8 ?" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 @" stage1 [7:0] $end
+$var reg 8 A" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_2 $end
+$var wire 8 B" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 C" stage1 [7:0] $end
+$var reg 8 D" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_3 $end
+$var wire 8 E" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 F" stage1 [7:0] $end
+$var reg 8 G" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_4 $end
+$var wire 8 H" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 I" stage1 [7:0] $end
+$var reg 8 J" sync_out [7:0] $end
+$upscope $end
+$upscope $end
+$scope module OCM_PASSENGER $end
+$var wire 8 K" SensorBackLeft_raw [7:0] $end
+$var wire 8 L" SensorBackRight_raw [7:0] $end
+$var wire 8 M" SensorFrontLeft_raw [7:0] $end
+$var wire 8 N" SensorFrontRight_raw [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var wire 8 O" FR_sync [7:0] $end
+$var wire 8 P" FL_sync [7:0] $end
+$var wire 8 Q" BR_sync [7:0] $end
+$var wire 8 R" BL_sync [7:0] $end
+$var reg 2 S" classify [1:0] $end
+$var reg 10 T" current_total [9:0] $end
+$var reg 8 U" weight_kg [7:0] $end
+$scope module u_sync_1 $end
+$var wire 8 V" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 W" stage1 [7:0] $end
+$var reg 8 X" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_2 $end
+$var wire 8 Y" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 Z" stage1 [7:0] $end
+$var reg 8 [" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_3 $end
+$var wire 8 \" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 ]" stage1 [7:0] $end
+$var reg 8 ^" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_4 $end
+$var wire 8 _" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 `" stage1 [7:0] $end
+$var reg 8 a" sync_out [7:0] $end
+$upscope $end
+$upscope $end
+$scope module OCM_REAR_LEFT $end
+$var wire 8 b" SensorBackLeft_raw [7:0] $end
+$var wire 8 c" SensorBackRight_raw [7:0] $end
+$var wire 8 d" SensorFrontLeft_raw [7:0] $end
+$var wire 8 e" SensorFrontRight_raw [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var wire 8 f" FR_sync [7:0] $end
+$var wire 8 g" FL_sync [7:0] $end
+$var wire 8 h" BR_sync [7:0] $end
+$var wire 8 i" BL_sync [7:0] $end
+$var reg 2 j" classify [1:0] $end
+$var reg 10 k" current_total [9:0] $end
+$var reg 8 l" weight_kg [7:0] $end
+$scope module u_sync_1 $end
+$var wire 8 m" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 n" stage1 [7:0] $end
+$var reg 8 o" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_2 $end
+$var wire 8 p" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 q" stage1 [7:0] $end
+$var reg 8 r" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_3 $end
+$var wire 8 s" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 t" stage1 [7:0] $end
+$var reg 8 u" sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_4 $end
+$var wire 8 v" async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 w" stage1 [7:0] $end
+$var reg 8 x" sync_out [7:0] $end
+$upscope $end
+$upscope $end
+$scope module OCM_REAR_RIGHT $end
+$var wire 8 y" SensorBackLeft_raw [7:0] $end
+$var wire 8 z" SensorBackRight_raw [7:0] $end
+$var wire 8 {" SensorFrontLeft_raw [7:0] $end
+$var wire 8 |" SensorFrontRight_raw [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var wire 8 }" FR_sync [7:0] $end
+$var wire 8 ~" FL_sync [7:0] $end
+$var wire 8 !# BR_sync [7:0] $end
+$var wire 8 "# BL_sync [7:0] $end
+$var reg 2 ## classify [1:0] $end
+$var reg 10 $# current_total [9:0] $end
+$var reg 8 %# weight_kg [7:0] $end
+$scope module u_sync_1 $end
+$var wire 8 &# async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 '# stage1 [7:0] $end
+$var reg 8 (# sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_2 $end
+$var wire 8 )# async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 *# stage1 [7:0] $end
+$var reg 8 +# sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_3 $end
+$var wire 8 ,# async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 -# stage1 [7:0] $end
+$var reg 8 .# sync_out [7:0] $end
+$upscope $end
+$scope module u_sync_4 $end
+$var wire 8 /# async_in [7:0] $end
+$var wire 1 / clk $end
+$var wire 1 E rst_n $end
+$var reg 8 0# stage1 [7:0] $end
+$var reg 8 1# sync_out [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 1#
+b0 0#
+b0 /#
+b0 .#
+b0 -#
+b0 ,#
+b0 +#
+b0 *#
+b0 )#
+b0 (#
+b0 '#
+b0 &#
+b0 %#
+b0 $#
+b0 ##
+b0 "#
+b0 !#
+b0 ~"
+b0 }"
+b0 |"
+b0 {"
+b0 z"
+b0 y"
+b0 x"
+b0 w"
+b0 v"
+b0 u"
+b0 t"
+b0 s"
+b0 r"
+b0 q"
+b0 p"
+b0 o"
+b0 n"
+b0 m"
+b0 l"
+b0 k"
+b0 j"
+b0 i"
+b0 h"
+b0 g"
+b0 f"
+b0 e"
+b0 d"
+b0 c"
+b0 b"
+b0 a"
+b0 `"
+b10100 _"
+b0 ^"
+b0 ]"
+b10100 \"
+b0 ["
+b0 Z"
+b10100 Y"
+b0 X"
+b0 W"
+b10100 V"
+b0 U"
+b0 T"
+b0 S"
+b0 R"
+b0 Q"
+b0 P"
+b0 O"
+b10100 N"
+b10100 M"
+b10100 L"
+b10100 K"
+b0 J"
+b0 I"
+b10100 H"
+b0 G"
+b0 F"
+b10100 E"
+b0 D"
+b0 C"
+b10100 B"
+b0 A"
+b0 @"
+b10100 ?"
+b0 >"
+b0 ="
+b0 <"
+b0 ;"
+b0 :"
+b0 9"
+b0 8"
+b10100 7"
+b10100 6"
+b10100 5"
+b10100 4"
+b0 3"
+b0 2"
+b0 1"
+b0 0"
+b0 /"
+b0 ."
+b0 -"
+b11111111 ,"
+b0 +"
+b0 *"
+b0 )"
+b0 ("
+b0 '"
+0&"
+b0 %"
+b0 $"
+b0 #"
+b0 ""
+b0 !"
+b111110100 ~
+b0 }
+b0 |
+b0 {
+0z
+b0 y
+b0 x
+b0 w
+b0 v
+b0 u
+b0 t
+b0 s
+b0 r
+b0 q
+b0 p
+0o
+b0 n
+b0 m
+b0 l
+b0 k
+b0 j
+b0 i
+b0 h
+b0 g
+b0 f
+b0 e
+b0 d
+b0 c
+b0 b
+b0 a
+b0 `
+b0 _
+b0 ^
+b0 ]
+b0 \
+b0 [
+b0 Z
+b0 Y
+b0 X
+b0 W
+b0 V
+b0 U
+b10100 T
+b10100 S
+b10100 R
+b10100 Q
+b0 P
+b0 O
+b10100 N
+b10100 M
+b10100 L
+b10100 K
+b111110100 J
+b0 I
+b0 H
+b0 G
+b0 F
+0E
+b0 D
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+b0 =
+b10100 <
+b10100 ;
+b10100 :
+b10100 9
+08
+b0 7
+b0 6
+b10100 5
+b10100 4
+b10100 3
+b10100 2
+b111110100 1
+b0 0
+0/
+b0 .
+b0 -
+b0 ,
+b0 +
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+b0 "
+0!
+$end
+#5
+1/
+#10
+0/
+#15
+1/
+#20
+0/
+1E
+#25
+b10100 `"
+b10100 ]"
+b10100 Z"
+b10100 W"
+b10100 I"
+b10100 F"
+b10100 C"
+b10100 @"
+1/
+#30
+0/
+#35
+b10100 9"
+b10100 A"
+b10100 8"
+b10100 D"
+b10100 ;"
+b10100 G"
+b10100 :"
+b10100 J"
+b10100 P"
+b10100 X"
+b10100 O"
+b10100 ["
+b10100 R"
+b10100 ^"
+b10100 Q"
+b10100 a"
+1/
+#40
+0/
+#45
+b1010000 T"
+b1010000 ="
+1/
+#50
+0/
+#55
+1/
+#60
+0/
+#65
+b10100 _
+b10100 U"
+b10100 `
+b10100 >"
+1/
+#70
+0/
+18
+#75
+b1 g
+b1 n
+b1 <"
+b101000 `
+b101000 >"
+b1 f
+b1 k
+b1 S"
+b101000 _
+b101000 U"
+1z
+1/
+#80
+0/
+#85
+b1 s
+1o
+b10 f
+b10 k
+b10 S"
+b111100 _
+b111100 U"
+b10 g
+b10 n
+b10 <"
+b111100 `
+b111100 >"
+1/
+#90
+0/
+#95
+b1010000 `
+b1010000 >"
+b1010000 _
+b1010000 U"
+b1 "
+b1 a
+b1 h
+b1 r
+1/
+#100
+0/
+#105
+1/
+#110
+0/
+#115
+1/
+#120
+0/
+08
+#125
+0z
+1/
+#130
+0/
+#135
+b0 s
+0o
+1/
+#140
+0/
+#145
+b0 "
+b0 a
+b0 h
+b0 r
+1/
+#150
+0/
+#155
+1/
+#160
+0/
+#165
+1/
+#170
+0/
+#175
+1/
+#180
+0/
+#185
+1/
+#190
+0/
+#195
+1/
+#200
+0/
+#205
+1/
+#210
+0/
+#215
+1/
+#220
+0/
+18
+b101000 0
+b101000 I
+b101000 }
+#225
+b100000 %"
+1z
+b100000 )"
+b11001000000 -"
+1/
+#230
+0/
+#235
+b1 s
+1o
+1/
+#240
+0/
+b1010 1
+b1010 J
+b1010 ~
+#245
+b11111111 %"
+b1 "
+b1 a
+b1 h
+b1 r
+b11001000000 )"
+1/
+#250
+0/
+#255
+1&"
+b11111111 ,
+b11111111 c
+b11111111 '"
+1!
+b11111111 +"
+1/
+#260
+0/
+#265
+b11011 0
+b11011 I
+b11011 }
+b1101 F
+1/
+#270
+0/
+#275
+b1110 0
+b1110 I
+b1110 }
+b1011011001 )"
+b1011011001 -"
+1/
+#280
+0/
+#285
+b1 0
+b1 I
+b1 }
+b11000100 %"
+b11000100 )"
+b11000100 -"
+1/
+#290
+0/
+#295
+b1 %"
+b0 ,
+b0 c
+b0 '"
+0!
+b0 0
+b0 I
+b0 }
+b1 )"
+b1 -"
+b0 +"
+1/
+#300
+0/
+#305
+0&"
+b0 %"
+b0 F
+b0 )"
+b0 -"
+1/
+#310
+0/
+#315
+1/
+#320
+0/
+#325
+1/
+#330
+0/
+#335
+1/
+#340
+0/
+08
+#345
+0z
+1/
+#350
+0/
+#355
+b0 s
+0o
+1/
+#360
+0/
+#365
+b0 "
+b0 a
+b0 h
+b0 r
+1/
+#370
+0/
+#375
+1/
+#380
+0/
+#385
+1/
+#390
+b0 9"
+b0 A"
+b0 @"
+b0 8"
+b0 D"
+b0 C"
+b0 ;"
+b0 G"
+b0 F"
+b0 :"
+b0 J"
+b0 I"
+b0 ="
+b0 g
+b0 n
+b0 <"
+b0 `
+b0 >"
+b0 P"
+b0 X"
+b0 W"
+b0 O"
+b0 ["
+b0 Z"
+b0 R"
+b0 ^"
+b0 ]"
+b0 Q"
+b0 a"
+b0 `"
+b0 T"
+b0 f
+b0 k
+b0 S"
+b0 _
+b0 U"
+0/
+0E
+#395
+1/
+#400
+0/
+18
+b1100100 1
+b1100100 J
+b1100100 ~
+b11111111 6
+b11111111 O
+b11111111 {
+b11111111 ."
+b1010000 0
+b1010000 I
+b1010000 }
+1E
+#405
+b10100 @"
+b10100 C"
+b10100 F"
+b10100 I"
+b10100 W"
+b10100 Z"
+b10100 ]"
+b10100 `"
+1z
+b11111111 /"
+b11111111 %"
+b1010000000 )"
+b1100100000000 -"
+1/
+#410
+0/
+b111100 7
+b111100 P
+b111100 |
+b111100 1"
+#415
+b1 s
+b11111111 ,
+b11111111 c
+b11111111 '"
+1!
+1&"
+b111100 2"
+b11111111 #"
+b11111111 0"
+1o
+b10100 Q"
+b10100 a"
+b10100 R"
+b10100 ^"
+b10100 O"
+b10100 ["
+b10100 P"
+b10100 X"
+b10100 :"
+b10100 J"
+b10100 ;"
+b10100 G"
+b10100 8"
+b10100 D"
+b10100 9"
+b10100 A"
+b11111111 +"
+1/
+#420
+0/
+#425
+b1010000 ="
+b1010000 T"
+b1 "
+b1 a
+b1 h
+b1 r
+b111100 !"
+b111100 ""
+b111100 3"
+0!
+b1000011 0
+b1000011 I
+b1000011 }
+b1101 F
+1/
+#430
+0/
+#435
+b110110 0
+b110110 I
+b110110 }
+b1010000 +
+b1010000 b
+b1010000 *"
+b111100 $"
+b10110100 ("
+b111000000 )"
+b1000110001001 -"
+1/
+#440
+0/
+#445
+b10100 `
+b10100 >"
+b10100 _
+b10100 U"
+b10000111 ,"
+b101001 0
+b101001 I
+b101001 }
+b100100011 )"
+b101101100100 -"
+1/
+#450
+0/
+#455
+b11100 0
+b11100 I
+b11100 }
+b10000111 ,
+b10000111 c
+b10000111 '"
+b10101000 %"
+b1 f
+b1 k
+b1 S"
+b101000 _
+b101000 U"
+b1 g
+b1 n
+b1 <"
+b101000 `
+b101000 >"
+b10101000 )"
+b11010010001 -"
+1/
+#460
+0/
+08
+b0 7
+b0 P
+b0 |
+b0 1"
+#465
+b10 g
+b10 n
+b10 <"
+b111100 `
+b111100 >"
+b10 f
+b10 k
+b10 S"
+b111100 _
+b111100 U"
+0z
+b0 2"
+b11111111 ,"
+b0 +
+b0 b
+b0 *"
+0&"
+b0 %"
+b11111111 ,
+b11111111 c
+b11111111 '"
+b10110 0
+b10110 I
+b10110 }
+b110 F
+1/
+#470
+0/
+#475
+b0 s
+b1001 0
+b1001 I
+b1001 }
+b0 !"
+b0 ""
+b0 3"
+0o
+b1010000 _
+b1010000 U"
+b1010000 `
+b1010000 >"
+b1101 F
+1/
+#480
+0/
+#485
+b0 "
+b0 a
+b0 h
+b0 r
+b0 0
+b0 I
+b0 }
+1/
+#490
+0/
+#495
+1/
+#500
+0/
+#505
+1/
+#510
+0/
+b1110110001111000 -
+b1110110001111000 G
+b1110110001111000 i
+b1110110001111000 t
+b11110 0
+b11110 I
+b11110 }
+#515
+b10001 0
+b10001 I
+b10001 }
+b1110110001111000 u
+1/
+#520
+0/
+#525
+b10 s
+b1110110001111000 q
+b1110110001111000 v
+b100 0
+b100 I
+b100 }
+1/
+#530
+0/
+#535
+b0 0
+b0 I
+b0 }
+1%
+1(
+b10 "
+b10 a
+b10 h
+b10 r
+1/
+#540
+0/
+#545
+1/
+#550
+0/
+#555
+1/
+#560
+0/
+#565
+1/
+#570
+0/
+#575
+1/
+#580
+0/
+#585
+1/
+#590
+0/
+#595
+1/
+#600
+0/
+#605
+1/
+#610
+0/
+b101 <
+b101 T
+b101 L"
+b101 _"
+b101 ;
+b101 S
+b101 K"
+b101 \"
+b101 :
+b101 R
+b101 N"
+b101 Y"
+b101 9
+b101 Q
+b101 M"
+b101 V"
+#615
+b101 `"
+b101 ]"
+b101 Z"
+b101 W"
+1/
+#620
+0/
+#625
+b101 P"
+b101 X"
+b101 O"
+b101 ["
+b101 R"
+b101 ^"
+b101 Q"
+b101 a"
+1/
+#630
+b0 s
+b0 F
+b0 +"
+b0 ,
+b0 c
+b0 '"
+b0 ("
+b0 )"
+b0 -"
+b0 $"
+b0 #"
+b0 0"
+b0 /"
+0%
+0(
+b0 "
+b0 a
+b0 h
+b0 r
+b0 q
+b0 v
+b0 u
+b0 T"
+b0 f
+b0 k
+b0 S"
+b0 _
+b0 U"
+b0 Q"
+b0 a"
+b0 `"
+b0 R"
+b0 ^"
+b0 ]"
+b0 O"
+b0 ["
+b0 Z"
+b0 P"
+b0 X"
+b0 W"
+b0 ="
+b0 g
+b0 n
+b0 <"
+b0 `
+b0 >"
+b0 :"
+b0 J"
+b0 I"
+b0 ;"
+b0 G"
+b0 F"
+b0 8"
+b0 D"
+b0 C"
+b0 9"
+b0 A"
+b0 @"
+0/
+0E
+#635
+1/
+#640
+0/
+#645
+1/
+#650
+0/
+1E
+#655
+b10100 @"
+b10100 C"
+b10100 F"
+b10100 I"
+b101 W"
+b101 Z"
+b101 ]"
+b101 `"
+b1110110001111000 u
+b11111111 /"
+1/
+#660
+0/
+#665
+b10 s
+b11111111 #"
+b11111111 0"
+b1110110001111000 q
+b1110110001111000 v
+b101 Q"
+b101 a"
+b101 R"
+b101 ^"
+b101 O"
+b101 ["
+b101 P"
+b101 X"
+b10100 :"
+b10100 J"
+b10100 ;"
+b10100 G"
+b10100 8"
+b10100 D"
+b10100 9"
+b10100 A"
+1/
+#670
+0/
+#675
+b1010000 ="
+b10100 T"
+b10 "
+b10 a
+b10 h
+b10 r
+b11111111 ,
+b11111111 c
+b11111111 '"
+1/
+#680
+0/
+#685
+b1101 F
+1/
+#690
+0/
+#695
+b10100 `
+b10100 >"
+b101 _
+b101 U"
+1/
+#700
+0/
+#705
+b1010 _
+b1010 U"
+b1 g
+b1 n
+b1 <"
+b101000 `
+b101000 >"
+1/
+#710
+0/
+#715
+b10 g
+b10 n
+b10 <"
+b111100 `
+b111100 >"
+b1 f
+b1 k
+b1 S"
+b1111 _
+b1111 U"
+1/
+#720
+0/
+#725
+1(
+b10100 _
+b10100 U"
+b1010000 `
+b1010000 >"
+1/
+#730
+0/
+#735
+1/
+#740
+0/
+#745
+1/
+#750
+0/
+b101110111000 .
+b101110111000 H
+b101110111000 j
+b101110111000 w
+b0 -
+b0 G
+b0 i
+b0 t
+#755
+b0 u
+b101110111000 x
+1/
+#760
+0/
+#765
+b101110111000 p
+b101110111000 y
+b0 q
+b0 v
+1/
+#770
+0/
+#775
+1'
+1/
+#780
+0/
+#785
+1/
+#790
+0/
+#795
+1/
+#800
+0/
+#805
+1/
+#810
+0/
+#815
+1/
+#820
+0/
+#825
+1/
+#830
+0/
+#835
+1/
+#840
+0/
+#845
+1/
+#850
+0/
+#855
+1/
+#860
+0/
+#865
+1/
+#870
+0/
+#875
+1/
+#880
+0/
+#885
+1/
+#890
+0/
+#895
+1/
+#900
+0/
