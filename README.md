@@ -31,14 +31,11 @@ Hệ thống xử lý luồng dữ liệu theo mô hình IPO (Input - Processing
     *   `Active Safety Unit (ASU)`: Tính toán phanh và trợ lái.
 *   **Outputs:** Kích nổ túi khí (Lái, Phụ, Rèm), Lực phanh thủy lực, Trợ lực lái điện, Đèn cảnh báo.
 
-*(Hình ảnh minh họa kiến trúc hệ thống)*
-<!-- Bạn hãy thay đường dẫn ảnh thực tế vào đây sau khi upload ảnh lên thư mục img/ -->
-![System Architecture](img/system_architecture.png)
 
 ## 📂 Repository Structure
 ```text
 📦 Car-Safety-System-Simulation-Verilog
- ┣ 📂 docs/                # Tài liệu dự án và báo cáo chi tiết
+ ┣ 📂 pdf/                # Tài liệu dự án và báo cáo chi tiết
  ┣ 📂 img/                 # Hình ảnh minh họa (Architecture, Waveforms)
  ┣ 📂 src/                 # Mã nguồn Verilog (RTL)
  ┃ ┣ 📜 synchronizer.v
